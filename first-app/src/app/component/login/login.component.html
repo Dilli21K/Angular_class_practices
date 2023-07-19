@@ -1,0 +1,19 @@
+<p>login works!</p>
+
+<div>
+    <label for="username">User Name</label>
+    <input type="text" id="username" placeholder="Enter the Username" #user value="" (input)="handleVal(user)"/>
+</div>
+<div>
+    <label for="pwd">Password</label>
+    <input type="password" id="pwd" placeholder="Enter the Password" #pwd value="" (input)="handlePwd(pwd)"/>
+</div>
+<div >
+    <button type="button"    (click)="handleLogin()">Login</button>
+</div>
+
+
+<a [routerLink]="'/register'">You dont have account Please signup</a>
+
+
+

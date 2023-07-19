@@ -1,0 +1,57 @@
+<p>accordian works!</p>
+
+<div class="acc-header">
+    <div class="headerTitle">
+        <div>
+            <button type="submit" (click)="toggle1()">
+                click
+                <i [class]="isActive1 ? 'fa fa-chevron-up':'fa fa-chevron-down'"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div *ngIf="showBody1">
+    <div class="acc-body">
+        Title#1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa commodi eius inventore aliquid perferendis
+        quos numquam voluptas unde maiores delectus odio voluptates, excepturi iste autem? Esse dignissimos rem corporis
+        cumque.
+    </div>
+</div>
+
+
+<div class="acc-header">
+    <div class="headerTitle">
+        <div>
+            <button type="submit" (click)="toggle2()">
+                click
+                <i [class]="isActive2 ? 'fa fa-chevron-up':'fa fa-chevron-down'"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div *ngIf="showBody2">
+    <div class="acc-body">
+        Title#2 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam veritatis consectetur laboriosam at
+        praesentium, labore, eos distinctio sit vero consequuntur nobis fuga commodi rerum non enim blanditiis quos in
+        cum!
+    </div>
+</div>
+
+
+<div class="acc-header">
+    <div class="headerTitle">
+        <div>
+            <button type="submit" (click)="toggle3()">
+                click
+                <i [class]="isActive3 ? 'fa fa-chevron-up':'fa fa-chevron-down'"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div *ngIf="showBody3">
+    <div class="acc-body">
+        Title#3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid tempora officiis libero? Tenetur
+        voluptatem possimus cum ducimus, natus consequatur. Quod esse doloribus, tempore incidunt minus beatae
+        aspernatur sed deleniti repudiandae!
+    </div>
+</div>

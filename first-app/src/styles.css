@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.header {
+  background-color: salmon;
+  text-align: center;
+  grid-area: h;
+  padding-top: 10px;
+}
+li a {
+  text-decoration: none;
+  font-size: 15px;
+}
+li a:hover {
+  color: whitesmoke;
+}
+.sidebar {
+  border: 1px solid darkseagreen;
+  background-color: darkseagreen;
+}
+li {
+  display: block;
+  padding-bottom: 5px;
+  padding-right: 20px;
+}
+.footer {
+  background-color: darksalmon;
+  grid-area: f;
+  padding-left: 10px;
+}
+.sidebar {
+  grid-area: sb;
+}
+.content {
+  grid-area: m;
+  padding-left: 15px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-rows: 20vh 60vh 20vh; */
+  grid-template-areas:
+    "h h h h h"
+    "sb m m m m"
+    "f f f f f";
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

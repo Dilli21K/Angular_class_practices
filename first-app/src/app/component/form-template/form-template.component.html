@@ -1,0 +1,43 @@
+<p>form-template works!</p>
+<div>
+
+    <div>
+        <form [formGroup]="userDetails" (ngSubmit)="onSubmit()">
+            <div>
+                <label for="uname">Username</label>
+                <input name="uname" type="text" id="uname" formControlName="uname">
+
+            </div>
+            <small *ngIf="!userDetails.get('uname')?.valid && userDetails.get('uname')?.['touched']">Username is
+                required</small>
+            <br>
+            <div>
+                <label for="emailAddress">Email address</label>
+                <input name="emailAddress" type="email" id="emailAddress" formControlName="email">
+
+            </div>
+            <small *ngIf="
+                                        userDetails.get('email')?.errors &&
+                                        userDetails.get('email')?.errors?.['required'] &&
+                                        userDetails.get('email')?.['touched']
+                                      ">Email Address is required</small>
+            <small *ngIf="
+                                        userDetails.get('email')?.errors &&
+                                        userDetails.get('email')?.errors?.['email'] &&
+                                        userDetails.get('email')?.['touched']
+                                      ">Email Address should be valid</small>
+
+            <br>
+            <div>
+                <input type="checkbox" id="readTerms" name="terms" formControlName="readTerms">
+                <label for="readTerms">I have read terms and conditions</label>
+                <button type="button" (click)="accept()">Accept</button>
+                <button mat-raised-button color="warn">Warn <mat-icon>home</mat-icon>
+                </button>
+
+            </div>
+            <br>
+            <button type="submit" [disabled]="!userDetails.valid">Submit</button>
+        </form>
+    </div>
+</div>

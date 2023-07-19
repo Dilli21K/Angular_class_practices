@@ -1,0 +1,19 @@
+<i class="fa fa-star" id="icon" #icon (click)="changeColor(icon) "></i>
+<b> {{count}}</b>
+
+
+<!-- <i class="fa fa-star" (click)="handleLike()" [style.color]="isSelected? 'red':'grey'"
+    [style.backgroundColor]="isSelected? 'black':'blue'"></i> -->
+
+<i class="fa fa-star" (click)="handleLike()" [ngStyle]="{
+    color:isSelected? 'red' :'grey' ,
+    backgroundColor :isSelected? 'black' :'blue' }">
+</i>
+
+
+<i class="fa fa-star" (click)="handleLike()" [ngClass]="{
+    liked:isSelected ,
+    unLiked:!isSelected}">
+</i>
+
+<b> {{likeCount}}</b>

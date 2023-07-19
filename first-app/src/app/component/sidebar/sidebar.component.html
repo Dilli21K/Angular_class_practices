@@ -1,0 +1,9 @@
+<!-- layout static -> content dynamic render w/o referesh browser - SPA href> routerLink-->
+<!-- <ul>
+    <li><a [routerLink]="'details'">Details</a></li>
+    <li><a [routerLink]="'pipe'">Pipe</a></li>
+</ul> -->
+
+<ul *ngFor="let x of sidebarInfo">
+    <li><a [routerLink]="x.pathName">{{x.label}}</a></li>
+</ul>

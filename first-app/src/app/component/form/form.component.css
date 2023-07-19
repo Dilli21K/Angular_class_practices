@@ -1,0 +1,22 @@
+label {
+  padding-right: 10px;
+}
+#uname {
+  margin-left: 20px;
+}
+#readTerms {
+  margin-right: 10px;
+}
+button {
+  background: indigo;
+  color: white;
+}
+
+small {
+  color: red;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

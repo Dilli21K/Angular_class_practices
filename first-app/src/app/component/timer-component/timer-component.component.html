@@ -1,0 +1,12 @@
+<p>timer-component works!</p>
+<label for="numb">Enter the minutes</label>
+<input type="number" id="numb" #numb value="" (input)="handleVal($event,numb)">
+<div>
+    <span>{{timerService.min}} : </span>
+    <span>{{timerService.sec}}</span>
+</div>
+<div>
+    <button (click)="handleStart()">Start</button>
+    <button (click)="handleReset()">Stop</button>
+    <button (click)="handlePause()" *ngIf="timerService.running">Pause</button>
+</div>

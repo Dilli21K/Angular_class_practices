@@ -1,0 +1,12 @@
+<h3>Contact Form</h3>
+
+<form (submit)="handleadd($event)" name="contactInfo">
+    <label for="mobileNo">MobileNo</label>
+    <input id="mobileNo" type="text" required [(ngModel)]="contactForm.mobileNo" name="mobileNo" />
+    <br><br>
+
+    <button type="submit">Next</button>
+    <button type="reset" id="reset" [hidden]="true"></button>
+
+</form>
+<!-- <app-data-parent [personArr]="personDetails" (sendIndex)="getDeleteByIndex($event)"></app-data-parent> -->

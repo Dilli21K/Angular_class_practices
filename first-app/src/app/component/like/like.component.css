@@ -1,0 +1,15 @@
+i:hover {
+  cursor: pointer;
+}
+i {
+  color: grey;
+}
+
+.liked {
+  color: red;
+  background-color: black;
+}
+.unLiked {
+  color: grey;
+  background-color: blue;
+}

@@ -1,0 +1,74 @@
+<!-- @- decorators -> @Pipe, @Injectable, @Component -->
+
+
+<!-- interpolation {{}} -->
+<h1>My First Page: {{ title }}</h1>
+<p>{{ getContent() }}</p>
+<img src={{imagePath}} width="20" />
+<input value={{details.firstName}} placeholder="Enter FirstName" />
+
+
+<!-- Property binding [propertyName]="value" -->
+<img [src]="imagePath" width="20" />
+<input [value]="'Sooraj'" placeholder="Enter FirstName" />
+
+<!-- class binding  [class.className]="condn"-->
+<h3 [class.subHeading]="isActive">My Content</h3>
+
+<!-- style binding [style.property]="condn" -->
+<!-- ternary operator -> condn ? expr1:expr2; -->
+<p [style.backgroundColor]=" isActive ?'blue':'red' " style="color:white;padding:10px">Lorem ipsum dolor sit amet
+    consectetur
+    adipisicing elit. Dolore
+    nihil
+    facere, unde neque non nobis corporis eligendi
+    repudiandae nulla a. Corporis provident facilis totam accusantium, eveniet enim unde quia culpa!</p>
+
+<!-- template varibles (reference variable ->#fname) -->
+<!-- using reference variable can accessing properties of element -->
+<label for="fname">Enter FirstName</label>
+<input type="text" id="fname" value="" #fname (input)="handleInput(fname)" />
+
+
+<!-- event binding (event handling) -->
+<h5>My Age : {{details.age}}</h5>
+<label for="age">Enter Age</label>
+<input type="number" [value]="details.age" placeholder="Enter Age" id="age" (input)="handleValue($event,'age')" />
+
+
+<h5>My Email : {{details.email}}</h5>
+<label for="email">Enter Email</label>
+<input type="email" [value]="details.email" placeholder="Enter Email" id="email" (input)="handleValue($event,'email')"
+    (keypress)="handleKey($event)" />
+
+<!-- attribute binding [attr.property]='value'  -->
+<table>
+    <thead>
+        <tr>
+            <th [attr.rowSpan]="2">SNO</th>
+            <th [attr.colSpan]="2">FullName</th>
+        </tr>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John</td>
+            <td>Joel</td>
+        </tr>
+    </tbody>
+</table>
+
+<button [attr.disabled]="true">Disabled</button>
+
+<!-- one way binding (ts->html interpolation,property,attribute, html -> ts event binding)  -->
+<!-- two way binding (ts<->html) -->
+<div>
+    {{phoneNum}}
+    <label for="phoneNum">Phone Num</label>
+    <input type="tel" id="phoneNum" placeholder="PhoneNumber" name="phoneNum" [(ngModel)]="phoneNum" />
+</div>

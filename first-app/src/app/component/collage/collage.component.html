@@ -1,0 +1,31 @@
+<h1>College Info</h1>
+
+<!-- switch(value){
+case 1:
+stmt
+case 2:
+stmt
+default:
+stmt
+} -->
+
+<table>
+    <thead>
+        <tr>
+            <th>SNO</th>
+            <th>Name</th>
+            <th>Autonmous</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of collegeInfo">
+            <td>{{item.id}}</td>
+            <td>{{item.collegeName}}</td>
+            <td *ngSwitch="item.autonmous">
+                <span *ngSwitchCase="'Y'">Yes</span>
+                <span *ngSwitchCase="'N'">No</span>
+                <span *ngSwitchDefault>Status unknown</span>
+            </td>
+        </tr>
+    </tbody>
+</table>

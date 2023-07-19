@@ -1,0 +1,32 @@
+<p>pipe works!</p>
+<h5>Company Information</h5>
+<hr />
+<!-- variable | pipeName
+    variable | pipeName : arguments (optional)
+    variable | pipeName : arguments :arguments ... -->
+<ul>
+    <li>Name: {{company.name | titlecase}}</li>
+    <li>Branch: {{company.branch | uppercase}}</li>
+    <li>Place: {{company.place | lowercase}}</li>
+    <li>rating: {{company.rating | number:'2.2-3'}}</li>
+    <li>turnAround: {{company.turnAround | number}}</li>
+
+    <!-- https://angular.io/api/common/DatePipe -->
+    <li>turnAround: {{company.turnAround | currency:'INR'}}</li>
+    <li>startedBy : {{company.startedBy | date:'shortDate'}}</li>
+    <li>startedBy : {{company.startedBy | date:'longDate'}}</li>
+    <li>startedBy : {{company.startedBy | date:'dd-MM-YYYY'}}</li>
+    <li>startedBy : {{company.startedBy | date:'dd-MM-YY'}}</li>
+    <li>startedBy : {{company.startedBy | date:'dd-MMM-YY'}}</li>
+
+
+    <!-- custom pipe -->
+    <li>Increment by 1:{{company.turnAround | increment}}</li>
+    <li>Increment by 5:{{company.turnAround | increment:5}}</li>
+
+    <li>Decrement by 1:{{company.turnAround | decrement}}</li>
+    <li>Decrement by 5:{{company.turnAround | decrement:5}}</li>
+    <li>Adding : {{ 0 | sum : [12,5,3,8,2]}}</li>
+
+</ul>
+<app-timer-component></app-timer-component>

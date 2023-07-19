@@ -1,0 +1,21 @@
+<h3>Person Form</h3>
+
+<form (submit)="handleSubmit($event)" name="formInfo">
+    <label for="firstName">FirstName</label>
+    <input id="firstName" type="text" required [(ngModel)]="personForm.firstName" name="firstName" />
+    <br><br>
+    <label for="lastName">LastName</label>
+    <input id="lastName" type="text" required [(ngModel)]="personForm.lastName" name="lastName" />
+    <br><br>
+    <label for="gender">Gender</label>
+    <input type="text" id="gender" required [(ngModel)]="personForm.gender" name="gender" />
+    <br><br>
+
+    <button type="submit">Next</button>
+    <button type="reset" id="reset" [hidden]="true"></button>
+
+</form>
+
+
+<!-- <app-contact-info [personArr]="contactDetails" (sendIndex)="getdeleteByIndex($event)"></app-contact-info> -->
+<!-- <app-data-parent [personArr]="personDetails" (sendIndex)="getDeleteByIndex($event)"></app-data-parent> -->

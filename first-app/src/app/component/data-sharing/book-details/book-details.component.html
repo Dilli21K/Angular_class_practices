@@ -1,0 +1,16 @@
+<h3>Book Form</h3>
+
+<form (submit)="handleAdd($event)" name="myForm">
+    <label for="bookName">BookName</label>
+    <input id="bookName" type="text" required [(ngModel)]="bookForm.bookName" name="bookName" />
+    <br><br>
+    <label for="year">Year</label>
+    <input id="year" type="text" required [(ngModel)]="bookForm.year" name="year" />
+    <br><br>
+
+    <button type="submit">Add</button>
+    <button type="reset" id="reset" [hidden]="true"></button>
+
+</form>
+<!-- (4) -->
+<app-book-list [bookArr]="bookDetails" (sendIndex)="getDeleteByIndex($event)"></app-book-list>

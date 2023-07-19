@@ -1,0 +1,8 @@
+<button type="button" (click)="handleLoad()">Load Data (Refresh)</button>
+
+<div class="student-details">
+    <div class="student-item" *ngFor="let item of studentInfo; trackBy: trackStudent">
+        <h3>Name: {{item.studentName}}</h3>
+        <i>Age: {{item.age}}</i>
+    </div>
+</div>

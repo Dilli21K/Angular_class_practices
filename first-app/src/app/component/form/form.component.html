@@ -1,0 +1,63 @@
+<p>form works!</p>
+<pre>
+    https://www.tektutorialshub.com/angular/how-to-set-value-in-template-driven-forms-in-angular/
+        --forms  (collect data from user)-> template driven / model(reactive ) form 
+       
+        --template driven
+        -- logic in template (html)
+        --simple form 
+
+        task
+        -------
+        1. password -> pattern 8 digit , includes uppercase, lowercase , number & special charcter ->password['pattern'] -> type valid password 
+        2. custom errors password & confirm password  to be same (setError)
+        3. value set ? (initial value set)
+    
+
+
+
+        --reactive forms
+        --logic in component (ts)
+        -complex form
+
+    </pre>
+<div>
+
+    <div>
+        <form #myForm="ngForm" autocomplete="off" (ngSubmit)="handleSubmit()">
+            <div>
+                <label for="uname">Username</label>
+                <input name="uname" type="text" id="uname" #uname="ngModel" ngModel required minlength=" 5"
+                    maxlength="10">
+            </div>
+            <!-- <small *ngIf="!uname.valid && uname.touched">Username is required</small> -->
+            <small *ngIf="uname.errors && uname.errors['required'] && uname.touched">Username is required</small>
+
+            <small *ngIf="uname.errors && uname.errors['minlength'] && uname.touched">Username Should have min 5
+                character</small>
+            <br>
+            <div>
+                <label for="emailAddress">Email address</label>
+                <input name="emailAddress" type="email" id="emailAddress" #emailAddress="ngModel" required email
+                    ngModel>
+            </div>
+            <small *ngIf="
+                        emailAddress.errors &&
+                        emailAddress.errors['required'] &&
+                        emailAddress.touched
+                      ">Email Address is required</small>
+            <small *ngIf="
+                        emailAddress.errors &&
+                        emailAddress.errors['email'] &&
+                        emailAddress.touched
+                      ">Email Address should be valid</small>
+            <br>
+            <div>
+                <input type="checkbox" id="readTerms" name="terms" [ngModel]="true">
+                <label for="readTerms">I have read terms and conditions</label>
+            </div>
+            <br>
+            <button type="submit" [disabled]="!myForm.valid">Submit</button>
+        </form>
+    </div>
+</div>
